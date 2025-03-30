@@ -5,6 +5,8 @@ const fs = require('fs');
 // 用于存储已生成名字的文件
 const HISTORY_FILE = 'generated-names.json';
 
+const NAMES_DATASET = 'names-dataset.txt';
+
 // 读取已生成的名字记录
 function readGeneratedNames() {
   try {
@@ -27,7 +29,7 @@ function saveGeneratedName(fullName) {
 }
 
 // 读取文件中的名字
-fs.readFile('names-dataset.txt', 'utf8', (err, data) => {
+fs.readFile(NAMES_DATASET, 'utf8', (err, data) => {
   if (err) {
     console.error("读取文件失败:", err);
     return;
